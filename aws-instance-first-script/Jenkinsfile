@@ -5,17 +5,15 @@ pipeline {
         booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
 
     }
-
-
-     environment {
-        AWS_ACCESS_KEY_ID     = credentials('AKIASP2YNYT4ILUKVWGM')
-        AWS_SECRET_ACCESS_KEY = credentials('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')
+       environment {
+        AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
 
    agent  any
         options {
                 timestamps ()
-                authorizationMatrix('interface java.util.List')
+                ansiColor('xterm')
             }
     stages {
         stage('checkout') {
