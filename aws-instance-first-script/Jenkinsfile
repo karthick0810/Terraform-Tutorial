@@ -15,7 +15,7 @@ pipeline {
    agent  any
         options {
                 timestamps ()
-                authorizationMatrix('xterm')
+                authorizationMatrix('interface java.util.List')
             }
     stages {
         stage('checkout') {
